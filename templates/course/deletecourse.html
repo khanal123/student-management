@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block toltal_card %}
+<div class="col-lg-6 m-auto">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Are you sure you want to delete?</h1>
+
+        </div>
+        <form class="user" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-user btn-block">
+                Delete
+            </button>
+            <hr>
+        </form>
+    </div>
+</div>
+{% endblock toltal_card %}

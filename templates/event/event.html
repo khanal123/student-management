@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block toltal_card %}
+<div class="container">
+    <div class="row">
+        {% for event in events %}
+            <div class="col-6 mb-3">
+                <div class="card">
+                    <h5 class="card-header">{{event.name}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{event.description}}</h5>
+                        <div class='button'>
+                            <a href="{% url 'event:updateevent'  event.id %}" class="btn btn-primary">EDIT</a>
+                            <a href="{% url 'event:deleteevent' event.id %}" class="btn btn-primary">DELETE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}  
+    </div>
+</div>
+{% endblock toltal_card %}

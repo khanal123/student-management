@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block toltal_card %}
+<div class="container">
+    <div class="row">
+        {% for notice in notices %}
+            <div class="col-6 mb-3">
+                <div class="card">
+                    <h5 class="card-header">{{notice.subject}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{notice.body}}</h5>
+                        <div class='button'>
+                            <a class="btn btn-primary" href="{% url 'notice:updatenotice' notice.id %}">EDIT</a>
+                            <a class="btn btn-primary" href="{% url 'notice:deletenotice' notice.id %}">DELETE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}  
+    </div>
+</div>
+{% endblock toltal_card %}

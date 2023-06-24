@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block toltal_card %}
+<div class="col-lg-6 m-auto">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Add Notice</h1>
+
+        </div>
+        <form class="user" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                
+                {{field.label_tag}}
+                <div class="form-group row">
+                    {{field}}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary btn-user btn-block">
+                Add Notice
+            </button>
+            <hr>
+        </form>
+    </div>
+</div>
+{% endblock toltal_card %}
